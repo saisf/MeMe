@@ -32,7 +32,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.text = "BOTTOM"
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
-        
+//        toolBar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 10)
+//
     }
 
     // MARK: Subscribe keyboard notification before view show
@@ -45,6 +46,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         unsubscribeFromKeyboardNotifications()
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
