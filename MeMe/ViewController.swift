@@ -8,19 +8,31 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
+    @IBOutlet weak var topTextField: UITextField!
+    @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    let customTextFieldDelegate = CustomTextFieldDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+//        topTextField.text = "TOP"
+        topTextField.delegate = customTextFieldDelegate
+        bottomTextField.delegate = customTextFieldDelegate
+
+        topTextField.textAlignment = .center
+//        bottomTextField.text = "BOTTOM"
+        bottomTextField.textAlignment = .center
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
+//        cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
     }
+    
+    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
