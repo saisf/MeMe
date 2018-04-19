@@ -19,13 +19,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        topTextField.text = "TOP"
+        
         topTextField.delegate = customTextFieldDelegate
         bottomTextField.delegate = customTextFieldDelegate
-
+        topTextField.defaultTextAttributes = customTextFieldDelegate.memeTextAttributes
+        bottomTextField.defaultTextAttributes = customTextFieldDelegate.memeTextAttributes
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
         topTextField.textAlignment = .center
-//        bottomTextField.text = "BOTTOM"
         bottomTextField.textAlignment = .center
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
