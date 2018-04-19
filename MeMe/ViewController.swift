@@ -15,6 +15,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     
+    // MARK: Customerized textField delegate
     let customTextFieldDelegate = CustomTextFieldDelegate()
     
     override func viewDidLoad() {
@@ -22,6 +23,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         topTextField.delegate = customTextFieldDelegate
         bottomTextField.delegate = customTextFieldDelegate
+        
+        // MARK: Customerized textField TextAttributes
         topTextField.defaultTextAttributes = customTextFieldDelegate.memeTextAttributes
         bottomTextField.defaultTextAttributes = customTextFieldDelegate.memeTextAttributes
         topTextField.text = "TOP"
@@ -39,7 +42,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView.contentMode = .scaleAspectFit
+//            imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
         }
         
