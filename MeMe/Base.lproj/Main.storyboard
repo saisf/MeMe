@@ -54,7 +54,7 @@
                                 </items>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sc9-E1-WkW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="46q-f6-knO"/>
                             <constraint firstItem="tQw-dZ-47z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="4pH-Ig-FPx"/>
@@ -75,6 +75,7 @@
                         <outlet property="bottomTextField" destination="iJV-tC-hxu" id="WCV-oN-gFZ"/>
                         <outlet property="cameraButton" destination="Mui-j2-btt" id="c3e-8u-ik3"/>
                         <outlet property="imageView" destination="fvu-0f-lOv" id="GfZ-My-H7D"/>
+                        <outlet property="toolBar" destination="sc9-E1-WkW" id="oJS-jR-LKp"/>
                         <outlet property="topTextField" destination="tQw-dZ-47z" id="c8F-Ke-18f"/>
                     </connections>
                 </viewController>
