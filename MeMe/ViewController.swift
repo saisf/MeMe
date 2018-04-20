@@ -14,13 +14,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var navBar: UINavigationBar!
     
     // MARK: Customerized textField delegate
     let customTextFieldDelegate = CustomTextFieldDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navBar.topItem?.title = "Meme"
+        navBar.titleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20)!]
+        
+        buttonsEnabling(enabled: false)
+        textFieldEnabling(enabled: false)
+        
+        if !UIImagePickerController.isSourceTypeAvailable(.camera) {
+            cameraButton.isEnabled = false
+        }
         
         topTextField.delegate = customTextFieldDelegate
         bottomTextField.delegate = customTextFieldDelegate
@@ -32,20 +45,26 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomTextField.text = "BOTTOM"
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
-//        toolBar.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 10)
-//
+
+
     }
 
     // MARK: Subscribe keyboard notification before view show
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications()
+        
+            subscribeToKeyboardNotifications()
+        
     }
+
     
     // MARK: Unsubscribe keyboard notification before view disappear
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
+        
         unsubscribeFromKeyboardNotifications()
+        
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -54,7 +73,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            imageView.contentMode = .scaleAspectFit
+
             imageView.image = pickedImage
         }
         dismiss(animated: true, completion: nil)
@@ -66,18 +85,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Function to detect when keyboard show
     func subscribeToKeyboardNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+    
+            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        
+        
     }
     
     // MARK: Function to unsubcribe keyboard notification
     func unsubscribeFromKeyboardNotifications() {
+        
+        
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(ViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    
     }
     
     // MARK: Frame up equal to keyboard height
     @objc func keyboardWillShow(_ notification: Notification) {
-        view.frame.origin.y -= getKeyboardHeight(notification)
+        
+        if bottomTextField.isEditing {
+            view.frame.origin.y -= getKeyboardHeight(notification)
+        }
     }
     
     // MARK: Frame down equal to keyboard height
@@ -100,6 +128,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func generateMemedImage() -> UIImage {
         
         toolBar.isHidden = true
+        navBar.isHidden = true
         
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
@@ -107,8 +136,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         UIGraphicsEndImageContext()
         
         toolBar.isHidden = false
+        navBar.isHidden = false
         
         return memedImage
+    }
+    
+    func buttonsEnabling(enabled: Bool) {
+        shareButton.isEnabled = enabled
+        cancelButton.isEnabled = enabled
+    }
+    
+    func textFieldEnabling(enabled: Bool) {
+        topTextField.isEnabled = enabled
+        bottomTextField.isEnabled = enabled
     }
 
     @IBAction func pickAnImage(_ sender: UIBarButtonItem) {
@@ -116,12 +156,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
+        buttonsEnabling(enabled: true)
+        textFieldEnabling(enabled: true)
     }
+    
     @IBAction func pickAnImageFromCamera(_ sender: UIBarButtonItem) {
+        
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
+        buttonsEnabling(enabled: true)
+        textFieldEnabling(enabled: true)
+    }
+    
+    @IBAction func shareMeme(_ sender: UIBarButtonItem) {
+        let memedImage = generateMemedImage()
+        let activity = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
+        present(activity, animated: true, completion: nil)
+        
+        activity.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            if success {
+                self.save()
+            } else {
+                print("\(error)")
+            }
+        }
+//        activity.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func cancelButton(_ sender: UIBarButtonItem) {
+        let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "memeEditor")
+        
+        if let loginVC = loginVC {
+            self.present(loginVC, animated: true, completion: nil)
+        }
     }
     
 }
