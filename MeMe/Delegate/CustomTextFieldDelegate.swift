@@ -25,6 +25,12 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
         
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField.text == "" {
+            textField.text = "Say something"
+        }
+    }
+    
     // MARK: Dismiss keyboard once return pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
