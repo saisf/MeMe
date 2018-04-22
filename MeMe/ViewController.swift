@@ -142,26 +142,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topTextField.isEnabled = enabled
         bottomTextField.isEnabled = enabled
     }
-
-    // MARK: Album button action
-    @IBAction func pickAnImage(_ sender: UIBarButtonItem) {
+    
+    // MARK: Image Picker controller source type
+    func imagePickerSourceType(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
+        imagePicker.sourceType = sourceType
         present(imagePicker, animated: true, completion: nil)
         buttonsEnabling(enabled: true)
         textFieldEnabling(enabled: true)
     }
+
+    // MARK: Album button action
+    @IBAction func pickAnImage(_ sender: UIBarButtonItem) {
+        imagePickerSourceType(sourceType: .photoLibrary)
+    }
     
     // MARK: Camera button action
     @IBAction func pickAnImageFromCamera(_ sender: UIBarButtonItem) {
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
-        buttonsEnabling(enabled: true)
-        textFieldEnabling(enabled: true)
+        imagePickerSourceType(sourceType: .camera)
     }
     
     // MARK: Share button action
@@ -178,7 +177,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print(String(describing: error))
             }
         }
-//        activity.dismiss(animated: true, completion: nil)
     }
     
     // MARK: Cancel button action
