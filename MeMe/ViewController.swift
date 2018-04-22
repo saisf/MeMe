@@ -31,43 +31,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         buttonsEnabling(enabled: false)
         textFieldEnabling(enabled: false)
+        
+        // MARK: Disable camera button if device does not support camera
         if !UIImagePickerController.isSourceTypeAvailable(.camera) {
             cameraButton.isEnabled = false
         }
         
-        // MARK: Text field border style
-        topTextField.borderStyle = .none
-        bottomTextField.borderStyle = .none
+        textFieldSetup(textfield: topTextField, delegate: customTextFieldDelegate, text: "TOP", textAttributes: customTextFieldDelegate.memeTextAttributes)
         
-        // MARK: TextField Delegate
-        topTextField.delegate = customTextFieldDelegate
-        bottomTextField.delegate = customTextFieldDelegate
-        
-        // MARK: Customerized textField TextAttributes
-        topTextField.defaultTextAttributes = customTextFieldDelegate.memeTextAttributes
-        bottomTextField.defaultTextAttributes = customTextFieldDelegate.memeTextAttributes
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
-
+        textFieldSetup(textfield: bottomTextField, delegate: customTextFieldDelegate, text: "BOTTOM", textAttributes: customTextFieldDelegate.memeTextAttributes)
 
     }
-
+    
     // MARK: Subscribe keyboard notification before view show
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
             subscribeToKeyboardNotifications()
-        
     }
-    
-
     
     // MARK: Unsubscribe keyboard notification before view disappear
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-
         unsubscribeFromKeyboardNotifications()
     }
     
@@ -140,6 +124,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return memedImage
     }
     
+    // MARK: TextField delegate and textAttributes set up
+    func textFieldSetup(textfield: UITextField, delegate: UITextFieldDelegate, text: String, textAttributes: [String:Any]) {
+        textfield.borderStyle = .none
+        textfield.text = text
+        textfield.delegate = delegate
+        textfield.defaultTextAttributes = textAttributes
+        textfield.textAlignment = .center
+    }
+    
     func buttonsEnabling(enabled: Bool) {
         shareButton.isEnabled = enabled
         cancelButton.isEnabled = enabled
@@ -182,7 +175,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if success {
                 self.save()
             } else {
-                print("\(error)")
+                print(String(describing: error))
             }
         }
 //        activity.dismiss(animated: true, completion: nil)
