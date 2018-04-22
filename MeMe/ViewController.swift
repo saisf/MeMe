@@ -35,6 +35,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             cameraButton.isEnabled = false
         }
         
+        // MARK: Text field border style
+        topTextField.borderStyle = .none
+        bottomTextField.borderStyle = .none
+        
         // MARK: TextField Delegate
         topTextField.delegate = customTextFieldDelegate
         bottomTextField.delegate = customTextFieldDelegate

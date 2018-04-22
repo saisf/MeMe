@@ -21,15 +21,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fvu-0f-lOv">
                                 <rect key="frame" x="0.0" y="44" width="375" height="529"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tQw-dZ-47z">
-                                <rect key="frame" x="163.5" y="110" width="49" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="tQw-dZ-47z">
+                                <rect key="frame" x="25" y="110" width="325" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" placeholder="Enter your bottom message" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-tC-hxu">
-                                <rect key="frame" x="88" y="498" width="199.5" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" borderStyle="roundedRect" textAlignment="center" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-tC-hxu">
+                                <rect key="frame" x="25" y="498" width="325" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -85,11 +85,15 @@
                             <constraint firstItem="fvu-0f-lOv" firstAttribute="top" secondItem="0PH-20-KPZ" secondAttribute="bottom" id="7OL-vF-2Dk"/>
                             <constraint firstItem="iJV-tC-hxu" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="9zN-Pz-ufA"/>
                             <constraint firstItem="sc9-E1-WkW" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="CEF-Sg-uQG"/>
+                            <constraint firstItem="tQw-dZ-47z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="F9T-ps-l08"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iJV-tC-hxu" secondAttribute="trailing" constant="25" id="GXg-f8-Cck"/>
                             <constraint firstItem="sc9-E1-WkW" firstAttribute="top" secondItem="iJV-tC-hxu" secondAttribute="bottom" constant="45" id="MUw-tb-Lbd"/>
                             <constraint firstItem="sc9-E1-WkW" firstAttribute="top" secondItem="fvu-0f-lOv" secondAttribute="bottom" id="QJe-fR-Djd"/>
                             <constraint firstItem="sc9-E1-WkW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="SeR-yK-7tf"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tQw-dZ-47z" secondAttribute="trailing" constant="25" id="bOa-qR-gcI"/>
                             <constraint firstItem="0PH-20-KPZ" firstAttribute="trailing" secondItem="fvu-0f-lOv" secondAttribute="trailing" id="dry-X3-oBm"/>
                             <constraint firstItem="0PH-20-KPZ" firstAttribute="leading" secondItem="fvu-0f-lOv" secondAttribute="leading" id="hTl-qo-IEU"/>
+                            <constraint firstItem="iJV-tC-hxu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="leN-CM-in0"/>
                             <constraint firstItem="fvu-0f-lOv" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qnO-rs-bhk"/>
                             <constraint firstItem="0PH-20-KPZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="sCA-i7-LhF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fvu-0f-lOv" secondAttribute="trailing" id="tCK-Ce-pDB"/>
@@ -114,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1210" y="-300"/>
+            <point key="canvasLocation" x="761" y="-394"/>
         </scene>
     </scenes>
 </document>
