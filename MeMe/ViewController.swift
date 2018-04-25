@@ -181,6 +181,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 print(String(describing: error))
             }
         }
+        
+//        let controller = self.storyboard!.instantiateViewController(withIdentifier: "MemedViewController") as! VillainDetailViewController
+//        self.navigationController!.pushViewController(controller, animated: true)
     }
     
     // MARK: Cancel button action
