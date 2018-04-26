@@ -212,7 +212,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="162-yQ-wDO">
                                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
+                                                <state key="normal" title="Edit"/>
                                             </button>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ezu-Fm-y2C">
@@ -241,8 +241,8 @@
                                                         <constraint firstAttribute="width" constant="140" id="oSg-wm-b1p"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kC4-uz-mHZ">
-                                                    <rect key="frame" x="282" y="-10.5" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kC4-uz-mHZ">
+                                                    <rect key="frame" x="190" y="-10.5" width="134" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -251,6 +251,7 @@
                                             <constraints>
                                                 <constraint firstItem="2Lg-b3-C64" firstAttribute="leading" secondItem="5eJ-Uf-vYX" secondAttribute="leading" id="He7-qf-bAw"/>
                                                 <constraint firstItem="2Lg-b3-C64" firstAttribute="top" secondItem="5eJ-Uf-vYX" secondAttribute="top" id="S1i-zF-q1y"/>
+                                                <constraint firstItem="kC4-uz-mHZ" firstAttribute="leading" secondItem="2Lg-b3-C64" secondAttribute="trailing" constant="50" id="WJ4-oY-yPg"/>
                                                 <constraint firstAttribute="bottom" secondItem="2Lg-b3-C64" secondAttribute="bottom" constant="2" id="abW-ka-GvJ"/>
                                                 <constraint firstItem="kC4-uz-mHZ" firstAttribute="centerY" secondItem="5eJ-Uf-vYX" secondAttribute="centerY" id="eVY-CX-geF"/>
                                                 <constraint firstAttribute="trailing" secondItem="kC4-uz-mHZ" secondAttribute="trailing" constant="51" id="hwa-qD-47T"/>
