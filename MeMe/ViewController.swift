@@ -169,6 +169,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Share button action
     @IBAction func shareMeme(_ sender: UIBarButtonItem) {
+        
+        
         let memedImage = generateMemedImage()
         let activity = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         present(activity, animated: true, completion: nil)
@@ -177,13 +179,16 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             (activity, success, items, error) in
             if success {
                 self.save()
+
+                // MARK: Instantiate saved memes tab bar controller
+                let controller = self.storyboard!.instantiateViewController(withIdentifier: "MemedViewController") as! MemedTabBarController
+                self.present(controller, animated: true, completion: nil)
+
             } else {
                 print(String(describing: error))
             }
         }
-        
-//        let controller = self.storyboard!.instantiateViewController(withIdentifier: "MemedViewController") as! VillainDetailViewController
-//        self.navigationController!.pushViewController(controller, animated: true)
+
     }
     
     // MARK: Cancel button action
