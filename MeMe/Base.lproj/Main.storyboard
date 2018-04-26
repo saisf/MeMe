@@ -215,12 +215,10 @@
                                                 <state key="normal" title="Button"/>
                                             </button>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" style="plain" id="ezu-Fm-y2C">
-                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VWi-qd-GQA">
-                                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                            </button>
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="ezu-Fm-y2C">
+                                            <connections>
+                                                <action selector="addNewMemeButton:" destination="rXN-nB-Fx0" id="9lO-v8-dzx"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>

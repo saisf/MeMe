@@ -42,4 +42,12 @@ class MemedTableViewController: UIViewController, UITableViewDataSource, UITable
         return cell
         
     }
+    
+    @IBAction func addNewMemeButton(_ sender: UIBarButtonItem) {
+        let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "memeEditor")
+        
+        if let loginVC = loginVC {
+            self.present(loginVC, animated: true, completion: nil)
+        }
+    }
 }
