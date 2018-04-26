@@ -230,22 +230,31 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Qe0-AC-Bv7" customClass="MemeTableViewCell" customModule="MeMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qe0-AC-Bv7" id="5eJ-Uf-vYX">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Qe0-AC-Bv7" id="5eJ-Uf-vYX">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-b3-C64">
-                                                    <rect key="frame" x="0.0" y="-43" width="95" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Lg-b3-C64">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="41.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="140" id="f0l-FJ-0dt"/>
+                                                        <constraint firstAttribute="width" constant="140" id="oSg-wm-b1p"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kC4-uz-mHZ">
-                                                    <rect key="frame" x="282" y="11" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kC4-uz-mHZ">
+                                                    <rect key="frame" x="282" y="-10.5" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="2Lg-b3-C64" firstAttribute="leading" secondItem="5eJ-Uf-vYX" secondAttribute="leading" id="He7-qf-bAw"/>
+                                                <constraint firstItem="2Lg-b3-C64" firstAttribute="top" secondItem="5eJ-Uf-vYX" secondAttribute="top" id="S1i-zF-q1y"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Lg-b3-C64" secondAttribute="bottom" constant="2" id="abW-ka-GvJ"/>
+                                                <constraint firstItem="kC4-uz-mHZ" firstAttribute="centerY" secondItem="5eJ-Uf-vYX" secondAttribute="centerY" id="eVY-CX-geF"/>
+                                                <constraint firstAttribute="trailing" secondItem="kC4-uz-mHZ" secondAttribute="trailing" constant="51" id="hwa-qD-47T"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="memedImage" destination="2Lg-b3-C64" id="egs-h3-cqC"/>

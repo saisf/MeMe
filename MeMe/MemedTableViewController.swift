@@ -11,6 +11,7 @@ import UIKit
 class MemedTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var memeTableView: UITableView!
+    
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
@@ -23,6 +24,7 @@ class MemedTableViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         memeTableView.dataSource = self
         memeTableView.delegate = self
+        memeTableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override var prefersStatusBarHidden: Bool {
