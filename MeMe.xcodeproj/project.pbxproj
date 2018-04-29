@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		EC128FA6209193CD00894355 /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC128FA5209193CD00894355 /* MemeTableViewCell.swift */; };
+		EC401F8D20957B580060B8EF /* MemedCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC401F8C20957B580060B8EF /* MemedCollectionViewController.swift */; };
+		EC401F90209581B70060B8EF /* MemedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC401F8F209581B70060B8EF /* MemedCollectionViewCell.swift */; };
 		EC58DB782092D5FA0066188C /* EditMemedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58DB772092D5FA0066188C /* EditMemedViewController.swift */; };
 		EC58DB91209563C30066188C /* IQTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58DB7B209563C30066188C /* IQTextView.swift */; };
 		EC58DB92209563C30066188C /* IQPreviousNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC58DB7D209563C30066188C /* IQPreviousNextView.swift */; };
@@ -39,6 +41,8 @@
 
 /* Begin PBXFileReference section */
 		EC128FA5209193CD00894355 /* MemeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
+		EC401F8C20957B580060B8EF /* MemedCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemedCollectionViewController.swift; sourceTree = "<group>"; };
+		EC401F8F209581B70060B8EF /* MemedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemedCollectionViewCell.swift; sourceTree = "<group>"; };
 		EC58DB772092D5FA0066188C /* EditMemedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMemedViewController.swift; sourceTree = "<group>"; };
 		EC58DB7B209563C30066188C /* IQTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQTextView.swift; sourceTree = "<group>"; };
 		EC58DB7D209563C30066188C /* IQPreviousNextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IQPreviousNextView.swift; sourceTree = "<group>"; };
@@ -82,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EC401F8E209581600060B8EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EC128FA5209193CD00894355 /* MemeTableViewCell.swift */,
+				EC401F8F209581B70060B8EF /* MemedCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		EC58DB752092387D0066188C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +103,7 @@
 				EC67D83420884F5700F9F172 /* ViewController.swift */,
 				EC8C9B5720913368003AFBC9 /* MemedTableViewController.swift */,
 				EC8C9B5D20913F16003AFBC9 /* MemedTabBarController.swift */,
+				EC401F8C20957B580060B8EF /* MemedCollectionViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -190,11 +204,11 @@
 				EC58DB752092387D0066188C /* Controller */,
 				EC67D84420890F2500F9F172 /* Delegate */,
 				EC67D849208937D300F9F172 /* Meme Editor */,
+				EC401F8E209581600060B8EF /* Cell */,
 				EC58DB79209563C30066188C /* IQKeyboardManagerSwift */,
 				EC67D83920884F5700F9F172 /* Assets.xcassets */,
 				EC67D83B20884F5700F9F172 /* LaunchScreen.storyboard */,
 				EC67D83E20884F5700F9F172 /* Info.plist */,
-				EC128FA5209193CD00894355 /* MemeTableViewCell.swift */,
 			);
 			path = MeMe;
 			sourceTree = "<group>";
@@ -305,6 +319,7 @@
 				EC58DB99209563C30066188C /* IQKeyboardManagerConstants.swift in Sources */,
 				EC58DB9D209563C30066188C /* IQUIScrollView+Additions.swift in Sources */,
 				EC58DB97209563C30066188C /* IQInvocation.swift in Sources */,
+				EC401F90209581B70060B8EF /* MemedCollectionViewCell.swift in Sources */,
 				EC58DB9F209563C30066188C /* IQUITextFieldView+Additions.swift in Sources */,
 				EC58DB92209563C30066188C /* IQPreviousNextView.swift in Sources */,
 				EC58DB782092D5FA0066188C /* EditMemedViewController.swift in Sources */,
@@ -312,6 +327,7 @@
 				EC67D8482089123700F9F172 /* CustomTextFieldDelegate.swift in Sources */,
 				EC58DB95209563C30066188C /* IQToolbar.swift in Sources */,
 				EC67D83320884F5700F9F172 /* AppDelegate.swift in Sources */,
+				EC401F8D20957B580060B8EF /* MemedCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
