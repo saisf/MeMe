@@ -207,7 +207,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NIF-Ao-U3V">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="NIF-Ao-U3V" customClass="MemedCollectionViewCell" customModule="MeMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -228,6 +228,9 @@
                         <viewLayoutGuide key="safeArea" id="09Z-Lt-Tfy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sent Memes" id="rJs-pV-59A"/>
+                    <connections>
+                        <outlet property="memedCollectionView" destination="oTC-EQ-6dh" id="cWQ-o1-y0J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ee-Iq-RcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
