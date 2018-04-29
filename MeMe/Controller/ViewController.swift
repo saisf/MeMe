@@ -218,10 +218,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Cancel button action
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-        let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "viewController")
-        if let loginVC = loginVC {
-            self.present(loginVC, animated: true, completion: nil)
-        }
+//        let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "viewController")
+//        if let loginVC = loginVC {
+//            self.present(loginVC, animated: true, completion: nil)
+//        }
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "MemedViewController") as! MemedTabBarController
+        self.present(controller, animated: true, completion: nil)
     }
     
 }
