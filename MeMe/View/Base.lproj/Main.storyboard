@@ -213,7 +213,21 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vms-t6-fZf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                </imageView>
+                                            </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="vms-t6-fZf" firstAttribute="top" secondItem="NIF-Ao-U3V" secondAttribute="top" id="Sg6-vN-KV8"/>
+                                            <constraint firstAttribute="bottom" secondItem="vms-t6-fZf" secondAttribute="bottom" id="Ux7-HY-jbO"/>
+                                            <constraint firstAttribute="trailing" secondItem="vms-t6-fZf" secondAttribute="trailing" id="b5X-Yx-EIx"/>
+                                            <constraint firstItem="vms-t6-fZf" firstAttribute="leading" secondItem="NIF-Ao-U3V" secondAttribute="leading" id="ieB-EW-lbn"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="memedImage" destination="vms-t6-fZf" id="Yyn-Au-qIY"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

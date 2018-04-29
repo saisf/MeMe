@@ -9,5 +9,6 @@
 import UIKit
 
 class MemedCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var memedImage: UIImageView!
     
 }
