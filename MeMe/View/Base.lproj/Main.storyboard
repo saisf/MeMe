@@ -181,12 +181,15 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <connections>
+                        <segue destination="wPs-fA-r8v" kind="relationship" relationship="rootViewController" id="PWu-H8-T8T"/>
+                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KJy-8L-xpI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1814" y="765"/>
+            <point key="canvasLocation" x="1814" y="763"/>
         </scene>
-        <!--View Controller-->
+        <!--Sent Memes-->
         <scene sceneID="HuK-Ci-VcR">
             <objects>
                 <viewController id="wPs-fA-r8v" sceneMemberID="viewController">
@@ -196,6 +199,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="09Z-Lt-Tfy"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="rJs-pV-59A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ee-Iq-RcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
