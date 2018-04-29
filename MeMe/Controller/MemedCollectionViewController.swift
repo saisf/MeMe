@@ -11,6 +11,11 @@ import UIKit
 class MemedCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var memedCollectionView: UICollectionView!
+    var num:Int?
+    var topText: String?
+    var bottomText: String?
+    var originalImage: UIImage?
+    
     
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
@@ -42,4 +47,32 @@ class MemedCollectionViewController: UIViewController, UICollectionViewDelegate,
         return cell
     }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let meme = self.memes[(indexPath as NSIndexPath).row]
+        
+        if let originalImage = meme.originalImage {
+            self.originalImage = originalImage
+        }
+        
+        if let topText = meme.topText {
+            print(topText)
+            self.topText = topText
+        }
+        
+        if let bottomText = meme.bottomText {
+            print(bottomText)
+            self.bottomText = bottomText
+        }
+        
+        self.num = indexPath.row
+        performSegue(withIdentifier: "CollectionViewControllerSegue", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as! EditMemedViewController
+        destination.num = self.num
+        destination.topText = self.topText
+        destination.bottomText = self.bottomText
+        destination.originalImage = self.originalImage
+    }
 }

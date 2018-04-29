@@ -244,6 +244,7 @@
                     <navigationItem key="navigationItem" title="Sent Memes" id="rJs-pV-59A"/>
                     <connections>
                         <outlet property="memedCollectionView" destination="oTC-EQ-6dh" id="cWQ-o1-y0J"/>
+                        <segue destination="Xv2-1i-Th7" kind="show" identifier="CollectionViewControllerSegue" id="fIW-zb-MEX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ee-Iq-RcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -349,11 +350,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Cn-RH-ZSY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3436" y="46.326836581709152"/>
+            <point key="canvasLocation" x="3607" y="556"/>
         </scene>
     </scenes>
     <resources>
         <image name="collection_30x30" width="30" height="30"/>
         <image name="table_30x30" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="fIW-zb-MEX"/>
+    </inferredMetricsTieBreakers>
 </document>
