@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -269,25 +270,35 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GUf-TP-wP6" customClass="MemeTableViewCell" customModule="MeMe" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="GUf-TP-wP6" customClass="MemeTableViewCell" customModule="MeMe" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUf-TP-wP6" id="9cC-ma-OuM">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GUf-TP-wP6" id="9cC-ma-OuM">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mx-Xr-Jx5">
-                                                    <rect key="frame" x="-25" y="-50" width="240" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1mx-Xr-Jx5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="85I-y2-jd2"/>
+                                                        <constraint firstAttribute="height" constant="150" id="qC0-QV-xMv"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJZ-5M-ukW">
-                                                    <rect key="frame" x="282" y="12" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hJZ-5M-ukW">
+                                                    <rect key="frame" x="165" y="-10.5" width="180" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="1mx-Xr-Jx5" firstAttribute="top" secondItem="9cC-ma-OuM" secondAttribute="top" id="1cv-3o-Xw8"/>
+                                                <constraint firstItem="hJZ-5M-ukW" firstAttribute="centerY" secondItem="9cC-ma-OuM" secondAttribute="centerY" id="dAu-1l-TJd"/>
+                                                <constraint firstItem="hJZ-5M-ukW" firstAttribute="leading" secondItem="1mx-Xr-Jx5" secondAttribute="trailing" constant="15" id="lgv-VQ-pMJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="1mx-Xr-Jx5" secondAttribute="bottom" id="lin-ga-kvK"/>
+                                                <constraint firstItem="1mx-Xr-Jx5" firstAttribute="leading" secondItem="9cC-ma-OuM" secondAttribute="leading" id="qHA-W4-CNn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hJZ-5M-ukW" secondAttribute="trailing" constant="15" id="syu-IL-xvq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="memedImage" destination="1mx-Xr-Jx5" id="uTr-AX-Aqb"/>
@@ -364,6 +375,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fIW-zb-MEX"/>
+        <segue reference="Jsx-6i-uzr"/>
     </inferredMetricsTieBreakers>
 </document>
