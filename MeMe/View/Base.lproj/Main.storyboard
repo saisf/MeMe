@@ -192,18 +192,46 @@
         <!--Sent Memes-->
         <scene sceneID="HuK-Ci-VcR">
             <objects>
-                <viewController id="wPs-fA-r8v" sceneMemberID="viewController">
+                <viewController id="wPs-fA-r8v" customClass="MemedCollectionViewController" customModule="MeMe" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hcx-ne-YVs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oTC-EQ-6dh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7Bb-qg-U7g">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NIF-Ao-U3V">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oTC-EQ-6dh" firstAttribute="bottom" secondItem="09Z-Lt-Tfy" secondAttribute="bottom" id="K9J-wQ-Tbt"/>
+                            <constraint firstItem="oTC-EQ-6dh" firstAttribute="trailing" secondItem="09Z-Lt-Tfy" secondAttribute="trailing" id="Ypc-Mg-kcK"/>
+                            <constraint firstItem="oTC-EQ-6dh" firstAttribute="top" secondItem="09Z-Lt-Tfy" secondAttribute="top" id="qlW-lg-Bpj"/>
+                            <constraint firstItem="oTC-EQ-6dh" firstAttribute="leading" secondItem="09Z-Lt-Tfy" secondAttribute="leading" id="yzm-D2-PUl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="09Z-Lt-Tfy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sent Memes" id="rJs-pV-59A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ee-Iq-RcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="764"/>
+            <point key="canvasLocation" x="2560.8000000000002" y="763.26836581709154"/>
         </scene>
         <!--Sent Meme-->
         <scene sceneID="2gI-Gf-0CB">
