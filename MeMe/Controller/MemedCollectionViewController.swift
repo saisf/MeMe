@@ -75,4 +75,12 @@ class MemedCollectionViewController: UIViewController, UICollectionViewDelegate,
         destination.bottomText = self.bottomText
         destination.originalImage = self.originalImage
     }
+    
+    @IBAction func addNewMemeButton(_ sender: UIBarButtonItem) {
+        let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "viewController")
+        if let loginVC = loginVC {
+            self.present(loginVC, animated: true, completion: nil)
+        }
+    }
+    
 }

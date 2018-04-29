@@ -241,7 +241,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="09Z-Lt-Tfy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sent Memes" id="rJs-pV-59A"/>
+                    <navigationItem key="navigationItem" title="Sent Memes" id="rJs-pV-59A">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="pQ8-Go-n7z">
+                            <connections>
+                                <action selector="addNewMemeButton:" destination="wPs-fA-r8v" id="8Io-BH-JHN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="memedCollectionView" destination="oTC-EQ-6dh" id="cWQ-o1-y0J"/>
                         <segue destination="Xv2-1i-Th7" kind="show" identifier="CollectionViewControllerSegue" id="fIW-zb-MEX"/>
