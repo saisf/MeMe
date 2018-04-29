@@ -155,11 +155,11 @@
             </objects>
             <point key="canvasLocation" x="737" y="359"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="6Mh-aC-BhO">
             <objects>
                 <navigationController id="EUh-Sa-Fig" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="yXY-F9-s0Q"/>
+                    <tabBarItem key="tabBarItem" title="" image="table_30x30" id="yXY-F9-s0Q"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mnt-2k-5R1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -172,11 +172,11 @@
             </objects>
             <point key="canvasLocation" x="1814" y="48"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="EiV-wW-i4E">
             <objects>
                 <navigationController id="55b-Yl-LIM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2fh-tR-3GN"/>
+                    <tabBarItem key="tabBarItem" title="" image="collection_30x30" id="2fh-tR-3GN"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Mlc-Vr-LYd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -303,4 +303,8 @@
             <point key="canvasLocation" x="3436" y="46.326836581709152"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection_30x30" width="30" height="30"/>
+        <image name="table_30x30" width="30" height="30"/>
+    </resources>
 </document>
