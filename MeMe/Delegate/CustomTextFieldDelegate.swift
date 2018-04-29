@@ -20,16 +20,12 @@ class CustomTextFieldDelegate: NSObject, UITextFieldDelegate {
     
     // MARK: Once user start inputing, textField will be clear and ready for user's input
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        
         textField.text = ""
-        
     }
     
     // MARK: Dismiss keyboard once return pressed
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         textField.resignFirstResponder()
-        
         return true
     }
     

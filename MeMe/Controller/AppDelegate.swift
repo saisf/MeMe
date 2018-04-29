@@ -10,6 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    //MARK: Shared data of Meme array
     var memes = [Meme]()
 
     var window: UIWindow?

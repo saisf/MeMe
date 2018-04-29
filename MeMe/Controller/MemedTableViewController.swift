@@ -12,7 +12,6 @@ class MemedTableViewController: UIViewController, UITableViewDataSource, UITable
     
     @IBOutlet weak var memeTableView: UITableView!
     var num:Int?
-    
     var topText: String?
     var bottomText: String?
     var originalImage: UIImage?
@@ -21,11 +20,6 @@ class MemedTableViewController: UIViewController, UITableViewDataSource, UITable
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
-   
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.reloadInputViews()
     }
     
     @IBOutlet weak var memeCell: UITableViewCell!
@@ -41,24 +35,16 @@ class MemedTableViewController: UIViewController, UITableViewDataSource, UITable
         return memes.count
     }
     
+    // MARK: Table view cell configuration
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! MemeTableViewCell
-
-
         let meme = self.memes[(indexPath as NSIndexPath).row]
-        print(indexPath.row)
         cell.memedImage.image = meme.memedImage
         cell.memedLabel.text = "\(meme.topText ?? "")...\(meme.bottomText ?? "")"
         return cell
-        
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.delete) {
-            tableView.deleteRows(at: [indexPath as IndexPath], with: UITableViewRowAnimation.automatic)
-        }
-    }
-    
+    // MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! EditMemedViewController
         destination.num = self.num
@@ -67,12 +53,9 @@ class MemedTableViewController: UIViewController, UITableViewDataSource, UITable
         destination.originalImage = self.originalImage
     }
 
-
-    
-    
+    // MARK: Capture meme originalImage
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let meme = self.memes[(indexPath as NSIndexPath).row]
-        
         if let originalImage = meme.originalImage {
             self.originalImage = originalImage
         }
@@ -86,15 +69,11 @@ class MemedTableViewController: UIViewController, UITableViewDataSource, UITable
             print(bottomText)
             self.bottomText = bottomText
         }
-        
         self.num = indexPath.row
         performSegue(withIdentifier: "EditMemedViewControllerSegue", sender: self)
     }
     
-    @IBAction func toEditButton(_ sender: UIBarButtonItem) {
-        
-    }
-    
+    // MARK: Add new meme button
     @IBAction func addNewMemeButton(_ sender: UIBarButtonItem) {
         let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "viewController")
         if let loginVC = loginVC {

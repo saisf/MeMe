@@ -215,16 +215,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vms-t6-fZf">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vms-t6-fZf">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="vms-t6-fZf" firstAttribute="top" secondItem="NIF-Ao-U3V" secondAttribute="top" id="Sg6-vN-KV8"/>
-                                            <constraint firstAttribute="bottom" secondItem="vms-t6-fZf" secondAttribute="bottom" id="Ux7-HY-jbO"/>
-                                            <constraint firstAttribute="trailing" secondItem="vms-t6-fZf" secondAttribute="trailing" id="b5X-Yx-EIx"/>
-                                            <constraint firstItem="vms-t6-fZf" firstAttribute="leading" secondItem="NIF-Ao-U3V" secondAttribute="leading" id="ieB-EW-lbn"/>
+                                            <constraint firstItem="vms-t6-fZf" firstAttribute="leading" secondItem="NIF-Ao-U3V" secondAttribute="leading" id="Ml0-Tz-eaa"/>
+                                            <constraint firstItem="vms-t6-fZf" firstAttribute="width" secondItem="NIF-Ao-U3V" secondAttribute="width" id="QTg-w4-RfQ"/>
+                                            <constraint firstItem="vms-t6-fZf" firstAttribute="height" secondItem="NIF-Ao-U3V" secondAttribute="height" id="Tzs-8C-afX"/>
+                                            <constraint firstAttribute="trailing" secondItem="vms-t6-fZf" secondAttribute="trailing" id="Vl7-Ry-5S5"/>
+                                            <constraint firstAttribute="bottom" secondItem="vms-t6-fZf" secondAttribute="bottom" id="WfC-TH-dUV"/>
+                                            <constraint firstItem="vms-t6-fZf" firstAttribute="top" secondItem="NIF-Ao-U3V" secondAttribute="top" id="bGA-2W-Yja"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="memedImage" destination="vms-t6-fZf" id="Yyn-Au-qIY"/>
@@ -250,6 +252,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="flowLayout" destination="7Bb-qg-U7g" id="xAI-yS-l95"/>
                         <outlet property="memedCollectionView" destination="oTC-EQ-6dh" id="cWQ-o1-y0J"/>
                         <segue destination="Xv2-1i-Th7" kind="show" identifier="CollectionViewControllerSegue" id="fIW-zb-MEX"/>
                     </connections>
@@ -375,6 +378,6 @@
         <image name="table_30x30" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jsx-6i-uzr"/>
+        <segue reference="fIW-zb-MEX"/>
     </inferredMetricsTieBreakers>
 </document>

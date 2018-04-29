@@ -13,13 +13,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     var originalImage: UIImage?
     var topText: String?
     var bottomText: String?
-    
     var num: Int?
     var memes: [Meme]! {
         let object = UIApplication.shared.delegate
         let appDelegate = object as! AppDelegate
         return appDelegate.memes
-        
     }
     
     @IBOutlet weak var topTextField: UITextField!
@@ -50,7 +48,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
         
         textFieldSetup(textfield: topTextField, delegate: customTextFieldDelegate, text: "TOP", textAttributes: customTextFieldDelegate.memeTextAttributes)
-        
         textFieldSetup(textfield: bottomTextField, delegate: customTextFieldDelegate, text: "BOTTOM", textAttributes: customTextFieldDelegate.memeTextAttributes)
 
     }
@@ -58,8 +55,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: Subscribe keyboard notification before view show
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-            subscribeToKeyboardNotifications()
-        if self.num == 1{
+        subscribeToKeyboardNotifications()
+        if self.num == 1 {
+            
         if let originalImage = self.originalImage {
             imageView.image = originalImage
             textFieldEnabling(enabled: true)
@@ -91,7 +89,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-
             imageView.image = pickedImage
         }
         dismiss(animated: true, completion: nil)
@@ -199,8 +196,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Share button action
     @IBAction func shareMeme(_ sender: UIBarButtonItem) {
-        
-        
         let memedImage = generateMemedImage()
         let activity = UIActivityViewController(activityItems: [memedImage], applicationActivities: nil)
         present(activity, animated: true, completion: nil)
@@ -224,7 +219,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     // MARK: Cancel button action
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
         let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "viewController")
-        
         if let loginVC = loginVC {
             self.present(loginVC, animated: true, completion: nil)
         }
