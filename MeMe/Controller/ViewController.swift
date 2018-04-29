@@ -9,7 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
-
+    
+    var originalImage: UIImage?
+    var topText: String?
+    var bottomText: String?
+    
+    var num: Int?
+    var memes: [Meme]! {
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        return appDelegate.memes
+        
+    }
+    
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
@@ -47,6 +59,23 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
             subscribeToKeyboardNotifications()
+        if self.num == 1{
+        if let originalImage = self.originalImage {
+            imageView.image = originalImage
+            textFieldEnabling(enabled: true)
+            buttonsEnabling(enabled: true)
+        }
+        
+        if let topText = self.topText {
+            topTextField.text = topText
+        }
+        
+        if let bottomText = self.bottomText {
+            bottomTextField.text = bottomText
+        }
+        num = 2
+        }
+        
     }
     
     // MARK: Unsubscribe keyboard notification before view disappear
@@ -193,11 +222,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     // MARK: Cancel button action
     @IBAction func cancelButton(_ sender: UIBarButtonItem) {
-//        let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "memeEditor")
-//        
-//        if let loginVC = loginVC {
-//            self.present(loginVC, animated: true, completion: nil)
-//        }
+        let loginVC: UIViewController? = self.storyboard?.instantiateViewController(withIdentifier: "memeEditor")
+        
+        if let loginVC = loginVC {
+            self.present(loginVC, animated: true, completion: nil)
+        }
     }
     
 }
