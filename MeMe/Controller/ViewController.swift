@@ -76,6 +76,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         num = 2
         }
         
+        
     }
     
     // MARK: Unsubscribe keyboard notification before view disappear
